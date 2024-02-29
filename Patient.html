@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Patient.css" />
+    <script src="https://kit.fontawesome.com/65a24482e7.js"></script>
+    <title>Patient</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a href="./Dashboard.html">
+          <div class="logo">
+              <i class="fa-solid fa-hand-holding-medical" style="color: #74C0FC;"></i>
+              <h4>JH Clinic</h4>
+          </div>
+        </a>
+        <a href="./Dashboard.html">
+          <div class="button">Dashboard</div>
+        </a>
+        <a href="./Patient.html">
+          <div class="button">Patient</div>
+        </a>
+        <a href="./Appointment.html">
+          <div class="button">Appointments</div>
+        </a>
+        <div class="button">Doctors</div>
+        <a href="./messages.html">
+          <div class="button">Messages</div>
+        </a>
+        <div class="button">Education Content</div>
+        <a href="./MedInventory.html">
+          <div class="button">Medicine Inventory</div>
+        </a>
+        <div class="button">Settings</div>
+        <div class="logout">Logout</div>
+      </div>
+      <div class="body">
+        <div class="navbar">
+          <div class="name">
+            <h5>Patient</h5>
+          </div>
+          <div class="profile">
+            <div class="notification">bell</div>
+            <div class="profile_image">pic</div>
+            <div class="profile_name">name</div>
+          </div>
+        </div>
+        <div class="content">
+          <h5>Patient info</h5>
+          <button class="add"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><span>New Patient</span></button>
+          <hr>
+          <div class="main">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass" style="color: #e3eaf4;"></i>
+              <input class="input" type="search" placeholder=" Search..." >
+              <input type="month" name="" id="" placeholder="Filter by Date ">
+            </div>
+            <div class="names">
+              <table class="table">
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Blood Group</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>User Action</th>
+                </tr>
+                <tr>
+                  <td>Elizabeth Gillian</td>
+                  <td>32</td>
+                  <td>Female</td>
+                  <td>O+</td>
+                  <td>12093749</td>
+                  <td>gilelizabeth@example.com</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message red">x</button>
+                    <button class="message line">i</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elizabeth Gillian</td>
+                  <td>32</td>
+                  <td>Female</td>
+                  <td>O+</td>
+                  <td>12093749</td>
+                  <td>gilelizabeth@example.com</td>
+                  <td class="btn">
+                    <button class="blue" id="chat2">M</button>
+                    <button class="message red">x</button>
+                    <button class="message line">i</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elizabeth Gillian</td>
+                  <td>32</td>
+                  <td>Female</td>
+                  <td>O+</td>
+                  <td>12093749</td>
+                  <td>gilelizabeth@example.com</td>
+                  <td class="btn">
+                    <button class="blue" id="chat3">M</button>
+                    <button class="message red">x</button>
+                    <button class="message line">i</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elizabeth Gillian</td>
+                  <td>32</td>
+                  <td>Female</td>
+                  <td>O+</td>
+                  <td>12093749</td>
+                  <td>gilelizabeth@example.com</td>
+                  <td class="btn">
+                    <button class="blue" id="chat4">M</button>
+                    <button class="message red">x</button>
+                    <button class="message line">i</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elizabeth Gillian</td>
+                  <td>32</td>
+                  <td>Female</td>
+                  <td>O+</td>
+                  <td>12093749</td>
+                  <td>gilelizabeth@example.com</td>
+                  <td class="btn">
+                    <button class="blue" id="chat5">M</button>
+                    <button class="message red">x</button>
+                    <button class="message line">i</button>
+                  </td>
+                </tr>
+              </table>
+              <div class="hidden" id="messanger">
+                <div class="top">
+                  <div class="mini_profile">P</div>
+                  <div class="user_name">
+                    <p class="user_name_text">Elizabeth Gillian</p>
+                    <p class="user_name_status"><small>online</small></p>
+                  </div>
+                  <div class="close" id="cloze">X</div>
+                </div>
+                <div class="message_area">
+                  <div class="doctor">
+                    <div class="doc_message">
+                      <p>Hello this is Dr. Zuri</p>
+                    </div>
+                  </div>
+                  <div class="patient">
+                    <div class="patient_message">
+                      <p>Hello this is Hellen</p>
+                    </div>
+                  </div>
+                  <div class="doctor">
+                    <div class="doc_message">
+                      <p>So what's the issue</p>
+                    </div>
+                  </div>
+                  <div class="patient">
+                    <div class="patient_message">
+                      <p>Headaches, stress</p>
+                    </div>
+                  </div>
+                  <div class="doctor">
+                    <div class="doc_message">
+                      <p>Are you Depressed??</p>
+                    </div>
+                  </div>
+                  <div class="patient">
+                    <div class="patient_message">
+                      <p>Yes Doc, I am.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="text_area">
+                  <div class="action">
+                    <textarea class="input" name="" id="" cols="30" rows="10" placeholder="text here..."></textarea>
+                    <button class="action_attach">att</button>
+                    <button class="action_send">>></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <div class="end">
+                <p class="Previous">Previous</p>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="number">4</button>
+                <p class="next">Next</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script src="/js/patient.js"></script>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Appointment.css" />
+    <script src="https://kit.fontawesome.com/65a24482e7.js"></script>
+    <title>APPointment</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a href="./Dashboard.html">
+          <div class="logo">
+              <i class="fa-solid fa-hand-holding-medical" style="color: #74C0FC;"></i>
+              <h4>JH Clinic</h4>
+          </div>
+        </a>
+        <a href="./Dashboard.html">
+          <div class="button">Dashboard</div>
+        </a>
+        <a href="./Patient.html">
+          <div class="button">Patient</div>
+        </a>
+        <a href="./Appointment.html">
+            <div class="button">Appointments</div>
+        </a>
+        <div class="button">Doctors</div>
+        <a href="./messages.html">
+          <div class="button">Messages</div>
+        </a>
+        <div class="button">Education Content</div>
+        <a href="./MedInventory.html">
+          <div class="button">Medicine Inventory</div>
+        </a>
+        <div class="button">Settings</div>
+        <div class="logout">Logout</div>
+      </div>
+      <div class="body">
+        <div class="navbar">
+          <div class="name">
+            <h5>Appointments</h5>
+          </div>
+          <div class="profile">
+            <div class="notification">bell</div>
+            <div class="profile_image">pic</div>
+            <div class="profile_name">name</div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="completed">
+              <button class="new" id="show">
+                  <div class="newAppointments">New Appointments</div>
+              </button>
+              <button class="hidden" id="click">
+                  <div class="completedAppointments">Completed Appointments</div>
+              </button>
+          </div>
+          <button class="add"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><span>New Appointments</span></button>
+          <hr>
+          <div class="main">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass" style="color: #e3eaf4;"></i>
+              <input class="input" type="search" placeholder=" Search..." >
+              <input type="month" name="" id="" placeholder="Filter by Date ">
+            </div>
+<!--  -->
+<!-- the hidden div starts here -->
+<!--  -->
+            <div class="names" id="display1">
+              <table class="table">
+                <tr>
+                  <th>Time</th>
+                  <th>Date</th>
+                  <th>Patient Name</th>
+                  <th>Patient Age</th>
+                  <th>Doctor</th>
+                  <th>User Action</th>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span>Reschedule</span>
+                    <button class="blue" id="chat">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span>Reschedule</span>
+                    <button class="blue" id="chat">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span>Reschedule</span>
+                    <button class="blue" id="chat">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span>Reschedule</span>
+                    <button class="blue" id="chat">X</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span>Reschedule</span>
+                    <button class="blue" id="chat">X</button>
+                  </td>
+                </tr>
+              </table>
+          </div>
+<!--  -->
+          <!-- second display for the completed Appointments -->
+          <!--  -->
+          <div class="second" id="display2">
+              <table class="table">
+                <tr>
+                  <th>Time</th>
+                  <th>Date</th>
+                  <th>Patient Name</th>
+                  <th>Patient Age</th>
+                  <th>Doctor</th>
+                  <th>Fee Status</th>
+                  <th>User Action</th>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span style="color: rgb(19, 219, 19);">paid</span>
+                  </td>
+                  <td><span style="color: rgb(203, 209, 215); ">Request Fee</span></td>
+                </tr>
+                <tr>
+                    <td>09:30AM</td>
+                    <td>09/02/2024</td>
+                    <td class="data"><div class="mini">
+                        <div class="mini_profile"></div>
+                        <div class="mini_profile_name">John David</div>
+                    </div></td>
+                    <td>32</td>
+                    <td>Dr. Zuri</td>
+                    <td class="btn">
+                        <span style="color: tomato;">Unpaid</span>
+                    </td>
+                    <td><span style="color: #74C0FC; cursor: pointer;">Request Fee</span></td>
+                </tr>
+                <tr>
+                    <td>09:30AM</td>
+                    <td>09/02/2024</td>
+                    <td class="data"><div class="mini">
+                        <div class="mini_profile"></div>
+                        <div class="mini_profile_name">John David</div>
+                    </div></td>
+                    <td>32</td>
+                    <td>Dr. Zuri</td>
+                    <td class="btn">
+                        <span style="color: tomato;">Unpaid</span>
+                    </td>
+                    <td><span style="color: #74C0FC; cursor: pointer;">Request Fee</span></td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span style="color: rgb(19, 219, 19);">paid</span>
+                  </td>
+                  <td><span style="color: rgb(203, 209, 215);">Request Fee</span></td>
+                </tr>
+                <tr>
+                  <td>09:30AM</td>
+                  <td>09/02/2024</td>
+                  <td class="data"><div class="mini">
+                    <div class="mini_profile"></div>
+                    <div class="mini_profile_name">John David</div>
+                  </div></td>
+                  <td>32</td>
+                  <td>Dr. Zuri</td>
+                  <td class="btn">
+                    <span style="color: rgb(19, 219, 19);">paid</span>
+                  </td>
+                  <td><span style="color: rgb(203, 209, 215);">Request Fee</span></td>
+                </tr>
+               
+              </table>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script src="../Pages/js/Appointment.js"></script>
+</html>

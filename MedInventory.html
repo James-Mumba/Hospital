@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./medinventory.css" />
+     <script src="https://kit.fontawesome.com/65a24482e7.js"></script>
+    <title>Medicine Inventory</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a href="./Dashboard.html">
+          <div class="logo">
+              <i class="fa-solid fa-hand-holding-medical" style="color: #74C0FC;"></i>
+              <h4>JH Clinic</h4>
+          </div>
+        </a>
+        <a href="./Dashboard.html">
+          <div class="button">Dashboard</div>
+        </a>
+        <a href="./Patient.html">
+          <div class="button">Patient</div>
+        </a>
+        <a href="./Appointment.html">
+          <div class="button">Appointments</div>
+        </a>
+        <div class="button">Doctors</div>
+        <a href="./messages.html">
+            <div class="button">Messages</div>
+        </a>
+        <div class="button">Education Content</div>
+        <a href="./MedInventory.html">
+            <div class="button">Medicine Inventory</div>
+        </a>
+        <div class="button">Settings</div>
+        <div class="logout">Logout</div>
+      </div>
+      <div class="body">
+        <div class="navbar">
+          <div class="name">
+            <h5>Inventory</h5>
+          </div>
+          <div class="profile">
+            <div class="notification">bell</div>
+            <div class="profile_image">pic</div>
+            <div class="profile_name">name</div>
+          </div>
+        </div>
+        <div class="content">
+          <h5>MEDICINE INVENTORY</h5>
+          <button class="add"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><span>New Patient</span></button>
+          <hr>
+          <div class="main">
+            <div class="search">
+              <!-- <i class="fa-solid fa-magnifying-glass" style="color: #e3eaf4;"></i> -->
+              <input class="input" type="search" placeholder=" Search..." >
+              <select name="" id="" class="product_type" >
+                    <option value="">Product type</option>
+                    <option value="">Inhaler</option>
+                    <option value="">Antibiotics</option>
+                    <option value="">Tablet</option>
+                    <option value="">Casule</option>
+              </select>
+                <select name="" id="" class="product_type" >
+                    <option value="">In Stock</option>
+                    <option value="">Fully Stocked</option>
+                    <option value="">Urgently Needed</option>
+                    <option value="">Out of Stock</option>
+                    <option value="">On Route</option>
+                 </select>
+                <input type="month" name="" id="" placeholder="Filter by Date ">
+                    <select name="" id="" class="product_type" >
+                    <option value="">Manufacturer</option>
+                    <option value="">Johnson & Johnson</option>
+                    <option value="">JH Health Care</option>
+                    <option value="">Davis Ltd</option>
+                    <option value="">Zee Industries</option>
+                    <option value="">KK & Fam ltd</option>
+                </select>
+            </div>
+            <div class="names">
+              <table class="table">
+                <tr>
+                <th></th>
+                  <th>Product Name</th>
+                  <th>Type</th>
+                  <th>Price(<small>Per Pack</small>)</th>
+                  <th>In Stock</th>
+                  <th>Expiry Date</th>
+                  <th>Manufacturer</th>
+                  <th>User Action</th>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Betamol 250mg</td>
+                  <td>Tablet</td>
+                  <td>KES 1200</td>
+                  <td>Urgently Needed</td>
+                  <td>12 Jan 2030</td>
+                  <td>Johnson & Johnson</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Ventolin 250mg</td>
+                  <td>Inhaler</td>
+                  <td>KES 1200</td>
+                  <td>100pcs</td>
+                  <td>12 Jan 2030</td>
+                  <td>KK & Fam Ltd</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Calol 250mg</td>
+                  <td>Syrup</td>
+                  <td>KES 2800</td>
+                  <td>Out of Stock</td>
+                  <td>12 Jan 2030</td>
+                  <td>JH Health Care</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Folic 50mg</td>
+                  <td>Tablet</td>
+                  <td>KES 200</td>
+                  <td>Fully Stocked</td>
+                  <td>12 Jan 2030</td>
+                  <td>Davis Ltd</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Zytal</td>
+                  <td>Tablet</td>
+                  <td>KES 100</td>
+                  <td>100pcs</td>
+                  <td>12 Jan 2030</td>
+                  <td>Johnson & Johnson</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+                <tr>
+                <td><input type="checkbox"></td>
+                  <td>Cod-liver oil</td>
+                  <td>Tablet</td>
+                  <td>KES 600</td>
+                  <td>100pcs</td>
+                  <td>12 Jan 2030</td>
+                  <td>Johnson & Johnson</td>
+                  <td class="btn">
+                    <button class="blue" id="chat">M</button>
+                    <button class="message line">+</button>
+                    <button class="message red">x</button>
+                  </td>
+                </tr>
+
+                
+
+              </table>
+            </div>
+            <div class="buttons">
+              <div class="end">
+                <p class="Previous">Previous</p>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="number">4</button>
+                <p class="next">Next</p>
+              </div>
+            </div>
+        </div>
+  </body>
+</html>
