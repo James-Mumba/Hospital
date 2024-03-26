@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Patient.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/65a24482e7.js"></script>
     <title>Patient</title>
   </head>
@@ -34,7 +35,7 @@
           <div class="button">Medicine Inventory</div>
         </a>
         <div class="button">Settings</div>
-        <div class="logout">Logout</div>
+        <div class="logout" id="out">Logout</div>
       </div>
       <div class="body">
         <div class="navbar">
@@ -44,37 +45,75 @@
           <div class="profile">
             <div class="notification">bell</div>
             <div class="profile_image">pic</div>
-            <div class="profile_name">name</div>
+            <div class="profile_name" id="profileName" ></div>
           </div>
         </div>
         <div class="content">
           <h5>Patient info</h5>
-          <button class="add"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><span>New Patient</span></button>
+          <button class="add" id="toggle-button"><i class="fa-solid fa-plus" style="color: #ffffff;"></i><span>New Patient</span></button>
           <hr>
           <div class="main">
             <div class="search">
-              <i class="fa-solid fa-magnifying-glass" style="color: #e3eaf4;"></i>
               <input class="input" type="search" placeholder=" Search..." >
               <input type="month" name="" id="" placeholder="Filter by Date ">
             </div>
-            <div class="names">
+            <div id="data-container" class="data-container">
+              <div class="opacity"></div>
+              <div class="data" id="data">
+                <div class="topper">
+                  <h4>Patient Details</h4>
+                  <button class="exit">X</button>
+                </div>
+                <div class="patient-details">
+                  <label for="name">Patients' Name</label>
+                  <input type="name" id="patientName">
+                  <label for="age">Age</label>
+                  <input type="age" id="age">
+                  <label for="gender">Gender</label>
+                  <select name="Gender" id="gender">
+                    <option value=""></option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                  </select>
+                  <label for="blood">Blood Group</label>
+                  <select name="Blood-Group" id="bloodGroup">
+                    <option value=""></option>
+                    <option value="A+" id="trial">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB">AB</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                  </select>
+
+                  <label for="Contact">Contact</label>
+                  <input type="number" id="contact">
+                  <label for="Email">Email</label>
+                  <input type="email" id="patientMail">
+
+                  <button class="submit" id="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+            <div class="names" id="names">
               <table class="table">
                 <tr>
                   <th>Patient Name</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Blood Group</th>
-                  <th>Phone Number</th>
-                  <th>Email</th>
+                  <th class="blink age">Age</th>
+                  <th class="blink gender">Gender</th>
+                  <th class="blink blood">Blood Group</th>
+                  <th class="blink tel">Phone Number</th>
+                  <th class="blink mail">Email</th>
                   <th>User Action</th>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td>Elizabeth Gillian</td>
-                  <td>32</td>
-                  <td>Female</td>
-                  <td>O+</td>
-                  <td>12093749</td>
-                  <td>gilelizabeth@example.com</td>
+                  <td class="blink age">32</td>
+                  <td class="blink gender">Female</td>
+                  <td class="blink blood">O+</td>
+                  <td class="blink tel">12093749</td>
+                  <td class="blink mail">gilelizabeth@example.com</td>
                   <td class="btn">
                     <button class="blue" id="chat">M</button>
                     <button class="message red">x</button>
@@ -83,11 +122,11 @@
                 </tr>
                 <tr>
                   <td>Elizabeth Gillian</td>
-                  <td>32</td>
-                  <td>Female</td>
-                  <td>O+</td>
-                  <td>12093749</td>
-                  <td>gilelizabeth@example.com</td>
+                  <td class="blink age">32</td>
+                  <td class="blink gender">Female</td>
+                  <td class="blink blood">O+</td>
+                  <td class="blink tel">12093749</td>
+                  <td class="blink mail">gilelizabeth@example.com</td>
                   <td class="btn">
                     <button class="blue" id="chat2">M</button>
                     <button class="message red">x</button>
@@ -96,43 +135,32 @@
                 </tr>
                 <tr>
                   <td>Elizabeth Gillian</td>
-                  <td>32</td>
-                  <td>Female</td>
-                  <td>O+</td>
-                  <td>12093749</td>
-                  <td>gilelizabeth@example.com</td>
+                  <td class="blink age">32</td>
+                  <td class="blink gender">Female</td>
+                  <td class="blink blood">O+</td>
+                   <td class="blink tel">12093749</td>
+                  <td class="blink mail">gilelizabeth@example.com</td>
                   <td class="btn">
                     <button class="blue" id="chat3">M</button>
                     <button class="message red">x</button>
                     <button class="message line">i</button>
                   </td>
-                </tr>
-                <tr>
+                </tr> -->
+                
+                <!-- <tr>
                   <td>Elizabeth Gillian</td>
-                  <td>32</td>
-                  <td>Female</td>
-                  <td>O+</td>
-                  <td>12093749</td>
-                  <td>gilelizabeth@example.com</td>
-                  <td class="btn">
-                    <button class="blue" id="chat4">M</button>
-                    <button class="message red">x</button>
-                    <button class="message line">i</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Elizabeth Gillian</td>
-                  <td>32</td>
-                  <td>Female</td>
-                  <td>O+</td>
-                  <td>12093749</td>
-                  <td>gilelizabeth@example.com</td>
+                  <td class="blink age">32</td>
+                  <td class="blink gender">Female</td>
+                  <td class="blink blood">O+</td>
+                  <td class="blink tel">12093749</td>
+                  <td class="blink mail">gilelizabeth@example.com</td>
                   <td class="btn">
                     <button class="blue" id="chat5">M</button>
                     <button class="message red">x</button>
                     <button class="message line">i</button>
                   </td>
-                </tr>
+                </tr> -->
+                
               </table>
               <div class="hidden" id="messanger">
                 <div class="top">
@@ -198,5 +226,11 @@
         </div>
     </div>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="/java script/config.js"></script>
+  <script src="./Dashboard.js"></script>
   <script src="/js/patient.js"></script>
 </html>

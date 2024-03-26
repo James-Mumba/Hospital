@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Noto+Serif:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -197,6 +199,7 @@
   /* background-color: aqua; */
   height: 90%;
   border-bottom: 10px;
+  position: relative;
 }
 
 .search {
@@ -207,6 +210,8 @@
 .search input {
   height: 32px;
   width: 200px;
+  padding-left: 20px;
+  font-size: 14px;
   border-radius: 20px;
   border: none;
   top: 9px;
@@ -216,19 +221,136 @@
   margin-right: 30px;
 }
 
-.fa-magnifying-glass {
-  position: absolute;
-  font-size: 16px;
-  margin-left: 107px;
-  margin-top: 17px;
-  z-index: 1;
+.input::placeholder {
   color: rgb(163, 163, 163);
 }
 
-::placeholder {
-  text-align: center;
-  color: rgb(163, 163, 163);
+/* Patient Popup styling */
+
+#data-container {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: hidden;
+  justify-content: center;
+  align-items: center;
 }
+
+#data-container {
+  display: none;
+}
+
+.opacity {
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  background: hsla(0, 0%, 9%, 0.8);
+  height: 100%;
+  width: 100%;
+}
+
+.data {
+  height: 450px;
+  width: 400px;
+  background-color: aliceblue;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.topper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #35b2fb;
+  height: 8%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.topper h4 {
+  font-size: 16px;
+  font-family: poppins;
+}
+
+.topper button {
+  height: 25px;
+  width: 25px;
+  border-radius: 8px;
+  margin-right: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 13px;
+}
+
+.topper button:hover {
+  background-color: #e12828;
+  color: white;
+  font-size: 14px;
+}
+
+.patient-details {
+  height: 85%;
+  width: 80%;
+  background-color: hsla(188, 52%, 90%, 0.9);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.patient-details label {
+  margin-bottom: -1px;
+}
+
+.patient-details input {
+  height: 20px;
+  margin-top: -10px;
+  outline: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-left: 10px;
+  background-color: transparent;
+  width: 190px;
+  cursor: pointer;
+}
+
+select {
+  height: 25px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+option {
+  border: none;
+  background-color: hsla(0, 0%, 100%, 0.8);
+}
+
+.submit {
+  cursor: pointer;
+  height: 30px;
+  width: 90px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: rgb(21, 214, 56);
+}
+
+/* End of popup */
+
+/* Tables begin here */
 
 .names {
   height: 80%;
@@ -259,8 +381,11 @@
   border-bottom-style: solid;
 }
 
-
-#chat, #chat2, #chat3, #chat4, #chat5 {
+#chat,
+#chat2,
+#chat3,
+#chat4,
+#chat5 {
   width: 27px;
   border-radius: 10px;
   border: none;
@@ -483,4 +608,186 @@
   left: 240px;
   cursor: pointer;
   background-color: #999999;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: relative;
+  }
+  .logout {
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    right: 5px;
+  }
+
+  .button {
+    padding-left: 30px;
+  }
+
+  .logout {
+    margin-left: -50px;
+  }
+
+  .name {
+    padding-left: 20px;
+  }
+
+  .profile {
+    width: 200px;
+  }
+
+  .notification,
+  .profile_image {
+    display: none;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .search input {
+    width: 150px;
+  }
+
+  #data-container {
+    width: 90%;
+  }
+
+  .names {
+    overflow-y: scroll;
+  }
+
+  .table {
+    margin-left: 20px;
+    width: 85%;
+  }
+
+  .blink {
+    display: none;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    padding-top: 20px;
+    position: relative;
+  }
+
+  .logout {
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+    right: 5px;
+  }
+
+  .navbar {
+    position: static; /* Reset position to static */
+    top: 0; /* Ensure navbar is at the top */
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is above other elements */
+  }
+
+  .navbar h5 {
+    margin-left: 20px; /* Adjust margin for smaller screens */
+  }
+
+  .notification,
+  .profile_image {
+    display: none;
+  }
+
+  .content {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .search {
+    display: none;
+  }
+
+  #data-container {
+    width: 95%;
+  }
+
+  .names {
+    overflow-y: scroll;
+  }
+
+  .table {
+    margin-left: 10px;
+    width: 90%;
+  }
+
+  .blink {
+    display: none;
+  }
+
+  .names {
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .sidebar {
+    position: relative;
+  }
+
+  .logout {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    right: 5px;
+  }
+
+  .button {
+    padding-left: 30px;
+  }
+
+  .logout {
+    margin-left: -100px;
+  }
+
+  .name {
+    padding-left: 20px;
+  }
+
+  .profile {
+    width: 200px;
+  }
+
+  .search {
+    display: none;
+  }
+
+  .search input {
+    width: 150px;
+  }
+
+  .names {
+    overflow-y: scroll;
+  }
+
+  .table {
+    margin-left: 20px;
+    width: 85%;
+  }
+
+  .age,
+  .mail {
+    display: none;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
 }

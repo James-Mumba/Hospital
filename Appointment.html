@@ -34,7 +34,7 @@
           <div class="button">Medicine Inventory</div>
         </a>
         <div class="button">Settings</div>
-        <div class="logout">Logout</div>
+        <div class="logout" id="out">Logout</div>
       </div>
       <div class="body">
         <div class="navbar">
@@ -44,7 +44,7 @@
           <div class="profile">
             <div class="notification">bell</div>
             <div class="profile_image">pic</div>
-            <div class="profile_name">name</div>
+            <div class="profile_name" id="profileName"></div>
           </div>
         </div>
         <div class="content">
@@ -239,5 +239,11 @@
         </div>
     </div>
   </body>
-  <script src="../Pages/js/Appointment.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="/java script/config.js"></script>
+    <script src="./Dashboard.js"></script>
+  <script src="../js/Appointment.js"></script>
 </html>

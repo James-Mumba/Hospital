@@ -37,7 +37,7 @@
           <div class="button">Medicine Inventory</div>
         </a>
         <div class="button">Settings</div>
-        <div class="logout">Logout</div>
+        <div class="logout" id="out">Logout</div>
       </div>
       <div class="body">
         <div class="navbar">
@@ -45,9 +45,9 @@
             <h5>Dashboard</h5>
           </div>
           <div class="profile">
-            <div class="notification">bell</div>
+            <div class="notification"><i class="fa-regular fa-bell"></i></div>
             <div class="profile_image">pic</div>
-            <div class="profile_name">name</div>
+            <div class="profile_name" id="profileName"></div>
           </div>
         </div>
         <div class="content">
@@ -55,12 +55,28 @@
             <div class="activity">
               <h4>Activity Overview</h4>
               <div class="upper">
-                <div class="left"></div>
-                <div class="right"></div>
+                <div class="left">
+                  <i class="fa-solid fa-file"></i>
+                  <h3>100</h3>
+                  <h5>Appointments</h5>
+                </div>
+                <div class="right">
+                  <i class="fa-solid fa-people-group"></i>
+                  <h3>100</h3>
+                  <h5>New Patients</h5>
+                </div>
               </div>
               <div class="lower">
-                <div class="left"></div>
-                <div class="right"></div>
+                <div class="left">
+                  <i class="fa-solid fa-pills"></i>
+                  <h3>500</h3>
+                  <h5>Medicines Sold</h5>
+                </div>
+                <div class="right">
+                  <i class="fa-solid fa-flask-vial"></i>
+                  <h3>100</h3>
+                  <h5>Lab Tests</h5>
+                </div>
               </div>
             </div>
             <div class="new">
@@ -202,4 +218,10 @@
       </div>
     </div>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="../java script/config.js"></script>
+  <script src="./Dashboard.js"></script>
 </html>
