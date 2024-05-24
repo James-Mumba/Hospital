@@ -4,7 +4,7 @@
 // var chat4 = document.getElementById("chat4");
 // var chat5 = document.getElementById("chat5");
 
-var cloze = document.getElementById("cloze"); 
+var cloze = document.getElementById("cloze");
 var messanger = document.getElementById("messanger");
 
 // chat.onclick = function () {
@@ -49,7 +49,7 @@ const toggleButton = document.getElementById("toggle-button"); // Assuming you h
 
 toggleButton.addEventListener("click", toggleDataContainer);
 
-// function to clear and close the above
+// function to clear and close the above popup
 
 function clearAndCloseDataContainer() {
   const inputs = dataContainer.querySelectorAll("input, select ");
@@ -68,15 +68,19 @@ function clearAndCloseDataContainer() {
 
 const exitButton = document.querySelector(".exit");
 exitButton.addEventListener("click", clearAndCloseDataContainer);
+//end of popup code
+
+// firebase collection creation
 
 // Creating new patient details collection
+//accessed using the new patient button
 document.getElementById("submit").onclick = function () {
   let patient = document.getElementById("patientName").value;
   let age = document.getElementById("age").value;
   let gender = document.getElementById("gender").value;
   let blood = document.getElementById("bloodGroup").value;
   let contact = document.getElementById("contact").value;
-  let mail = document.getElementById("patientMail").value;
+  let Doc_Assigned = document.getElementById("patientMail").value;
 
   let timestamp = new Date();
 
@@ -89,7 +93,7 @@ document.getElementById("submit").onclick = function () {
       sex: gender,
       bloodType: blood,
       contact: contact,
-      mail: mail,
+      docAssigned: Doc_Assigned,
       time: timestamp,
     })
     .then(() => {
@@ -119,10 +123,12 @@ function fetchDataAndAppendToTable() {
             <th class="blink gender">Gender</th>
             <th class="blink blood">Blood Group</th>
             <th class="blink tel">Phone Number</th>
-            <th class="blink mail">Email</th>
+            <th class="blink mail">Doc Assigned</th>
             <th>User Action</th>
         </tr>
     `;
+
+  // New Patient Table side
 
   // Fetch data from Firestore
   patientDataCollection
@@ -139,11 +145,11 @@ function fetchDataAndAppendToTable() {
                 <td class="blink gender">${data.sex}</td>
                 <td class="blink blood">${data.bloodType}</td>
                 <td class="blink tel">${data.contact}</td>
-                <td class="blink mail">${data.mail}</td>
+                <td class="blink docAssigned">${data.docAssigned}</td>
                 <td class="btn">
-                    <button class="blue" id="chat${doc.id}">M</button>
-                    <button class="message red">x</button>
+                    <button class="message blue" id="chat${doc.id}"><i class="fa-solid fa-syringe"></i></button>
                     <button class="message line">i</button>
+                    <button class="message red" id="delete${doc.id}"><i class="fa-solid fa-trash-can"></i></button>
                 </td>
             `;
 
@@ -155,18 +161,40 @@ function fetchDataAndAppendToTable() {
         chatButton.addEventListener("click", () => {
           messanger.classList.remove("hidden");
         });
+        const deleteButton = newRow.querySelector("#delete" + doc.id);
+        deleteButton.addEventListener("click", () => {
+          deletePatientData(doc.id);
+        });
       });
     })
     .catch((error) => {
-      console.log("Error fetching data: ", error);
+      var errorMessage = error.message;
+      console.log(errorMessage);
     });
+  //delete function
+  function deletePatientData(docId) {
+    patientDataCollection
+      .doc(docId)
+      .delete()
+      .then(() => {
+        console.log("deleted successfully");
+        //refresh the table after deleting doc
+        fetchDataAndAppendToTable();
+      })
+      .catch((error) => {
+        var errorMessage = error.message;
+        console.log("error removing document:", errorMessage);
+      });
+  }
 }
 
-// Call the function to fetch and append data when the page loads
+// Call the function to fetch and append data when the page loads here
 fetchDataAndAppendToTable();
+//
+//delete function
 
+//search input below
 //code for searching for a patient using the search input
-
 const searchInput = document.querySelector(".search input");
 
 //filter and display table rows based on search input
@@ -179,7 +207,7 @@ function filterTableRows() {
     if (patientName) {
       const patientNameText = patientName.textContent.toLowerCase();
       if (patientNameText.includes(searchTerm)) {
-        row.style.display = ""; 
+        row.style.display = "";
       } else {
         row.style.display = "none";
       }
@@ -189,3 +217,99 @@ function filterTableRows() {
 
 // Add event listener to search input
 searchInput.addEventListener("input", filterTableRows);
+
+//previous and next buttons
+// creating a next and previous page
+// const entriesPerPage = 7;
+// let currentPage = 1;
+
+// const sampleData = [
+//   {
+//     age: "12",
+//     bloodType: "",
+//     contact: "6789",
+//     docAssigned: "ajhsa@ajsna.kasjnc",
+//     patients: "john",
+//     sex: "",
+//   },
+//   {
+//     age: "121",
+//     bloodType: "",
+//     contact: "16789",
+//     docAssigned: "qajhsa@ajsna.kasjnc",
+//     patients: "john t",
+//     sex: "",
+//   },
+//   {
+//     age: "1",
+//     bloodType: "",
+//     contact: "789",
+//     docAssigned: "jhsa@ajsna.kasjnc",
+//     patients: "jon",
+//     sex: "",
+//   },
+//   {
+//     age: "2",
+//     bloodType: "",
+//     contact: "89",
+//     docAssigned: "a@ajsna.kasjnc",
+//     patients: "jo",
+//     sex: "",
+//   },
+//   {
+//     age: "41",
+//     bloodType: "",
+//     contact: "9",
+//     docAssigned: "aa@ajsna.kasjnc",
+//     patients: "peet",
+//     sex: "",
+//   },
+//   {
+//     age: "44",
+//     bloodType: "",
+//     contact: "0298320",
+//     docAssigned: "kls@fwsdvm.kasjnc",
+//     patients: "pgv",
+//     sex: "",
+//   },
+//   {
+//     age: "122",
+//     bloodType: "",
+//     contact: "672-349",
+//     docAssigned: "sdvsva@ssajsna.kasjnc",
+//     patients: "johnny",
+//     sex: "",
+//   },
+// ];
+
+// const totalPages = Math.ceil(sampleData.length / entriesPerPage);
+
+// function displayEntries() {
+//   const startIndex = (currentPage - 1) * entriesPerPage;
+//   const endIndex = startIndex + entriesPerPage;
+//   const currentEntries = sampleData.slice(startIndex, endIndex);
+
+//   console.log("Current Page", currentPage);
+//   console.log(currentEntries);
+
+//   document.getElementById("prev").disabled = currentPage === 1;
+//   document.getElementById("next").disabled = currentPage === totalPages;
+// }
+// // call the function
+// displayEntries();
+
+// //event listener for the previous and next buttons
+
+// document.getElementById("prev").addEventListener("click", () => {
+//   if (currentPage > 1) {
+//     currentPage--;
+//     displayEntries();
+//   }
+// });
+
+// document.getElementById("next").addEventListener("click", () => {
+//   if (currentPage < totalPages) {
+//     currentPage++;
+//     displayEntries();
+//   }
+// });

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Doctors.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/65a24482e7.js"></script>
+    <title>Doctors</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <a href="./Dashboard.html">
+          <div class="logo">
+            <i
+              class="fa-solid fa-hand-holding-medical"
+              style="color: #74c0fc"
+            ></i>
+            <h4>JH Clinic</h4>
+          </div>
+        </a>
+        <a href="./Dashboard.html">
+          <div class="button">Dashboard</div>
+        </a>
+        <a href="./Patient.html">
+          <div class="button">Patient</div>
+        </a>
+        <a href="./Appointment.html">
+          <div class="button">Appointments</div>
+        </a>
+        <div class="button">Doctors</div>
+        <a href="./messages.html">
+          <div class="button">Messages</div>
+        </a>
+        <div class="button">Education Content</div>
+        <a href="MedInventory.html">
+          <div class="button">Medicine Inventory</div>
+        </a>
+        <div class="button">Settings</div>
+        <div class="logout" id="out">Logout</div>
+      </div>
+      <div class="body">
+        <div class="navbar">
+          <div class="name">
+            <h5>Doctors</h5>
+          </div>
+          <div class="profile">
+            <div class="notification"><i class="fa-regular fa-bell"></i></div>
+            <div class="profile_image">pic</div>
+            <div class="profile_name" id="profileName"></div>
+          </div>
+        </div>
+
+        <!-- nav & side bar end -->
+        <div class="content">
+          <!-- <div class="hidden" id="hidden">
+            <div class="card">
+              <div class="first-content">
+                <span>One</span>
+              </div>
+              <div class="second-content">
+                <input
+                  type="text"
+                  name=""
+                  id="doctors-name"
+                  placeholder="Doctors name"
+                />
+                <button class="doc-login" id="doc-login">Log in</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="first-content">
+                <span>Three</span>
+              </div>
+              <div class="second-content">
+                <input
+                  type="text"
+                  name=""
+                  id="doctors-name"
+                  placeholder="Doctors name"
+                />
+
+                <button class="doc-login" id="doc-login">Log in</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="first-content">
+                <span>Five</span>
+              </div>
+              <div class="second-content">
+                <input
+                  type="text"
+                  name=""
+                  id="doctors-name"
+                  placeholder="Doctors name"
+                />
+
+                <button class="doc-login" id="doc-login">Log in</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="first-content">
+                <span>Seven</span>
+              </div>
+              <div class="second-content">
+                <input
+                  type="text"
+                  name=""
+                  id="doctors-name"
+                  placeholder="Doctors name"
+                />
+                <button class="doc-login" id="doc-login">Log in</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="first-content">
+                <span>Nine</span>
+              </div>
+              <div class="second-content">
+                <input
+                  type="text"
+                  name=""
+                  id="doctors-name"
+                  placeholder="Doctors name"
+                />
+                <button class="doc-login" id="doc-login">Log in</button>
+              </div>
+            </div>
+          </div> -->
+          <div class="shown" id="show">
+            <div class="patient-list">
+              <div class="settings">
+                <div class="search">
+                  <input
+                    type="search"
+                    name=""
+                    placeholder="search here..."
+                    id="sea"
+                  />
+                  <button class="search-button">search</button>
+                  <button class="set"><i class="fa-solid fa-gear"></i></button>
+                  <button class="notify">
+                    <i class="fa-regular fa-bell"></i>
+                  </button>
+                </div>
+                <div class="on-off-duty">
+                  <button class="in-office">On-Duty</button>
+                  <button class="off-duty">Off-Duty</button>
+                </div>
+              </div>
+              <div class="welcome">
+                <h3>Hello, Dr.<span id="doctors-name"> Zuri Mumba</span></h3>
+                <p>Welcome to your Dashboard</p>
+              </div>
+              <div class="docs-present">
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+              </div>
+              <div class="bookings">
+                <h4>Appointments</h4>
+                <hr />
+                <table class="list">
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Patients Card</th>
+                    <th>Send lab</th>
+                    <th>Reffer To:</th>
+                  </tr>
+                  <tr>
+                    <td class="t-list">john litzbit</td>
+                    <td class="t-list">45</td>
+                    <td class="t-list">Male</td>
+                    <td class="t-list">
+                      <button class="patientButton" id="patientButton">
+                        Patients Card
+                      </button>
+                    </td>
+                    <td class="t-list">
+                      <select>
+                        <option value=""></option>
+                        <option value="CT-Scan">CT-Scan</option>
+                        <option value="Lab">Lab</option>
+                        <option value="X-ray">X-ray</option>
+                        <option value="Ultra-Sound">Ultra-Sound</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select>
+                        <option value=""></option>
+                        <option value="Orthopedic">Orthopedic</option>
+                        <option value="Lab">Lab</option>
+                        <option value="Gyna">Gyna</option>
+                        <option value="Maternity">Maternity</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="stats">
+              <div class="summary">
+                <h4>Summary</h4>
+                <p>Total Bookings <span class="num">123</span></p>
+                <p>Pending Bookings <span class="num">3</span></p>
+                <p>Cancelled Bookings <span class="num">2</span></p>
+                <p>Response <span class="num">94%</span></p>
+              </div>
+              <div class="pie-chart">
+                <h4>Total Patients</h4>
+              </div>
+              <div class="docs-on-duty">
+                <div class="titles">
+                  <h4>Doctors</h4>
+                  <p><small>see more</small></p>
+                </div>
+                <div class="doc-list">
+                  <div class="mini-profile">1</div>
+                  <div class="docs-name">Dr. Zuri Mumba</div>
+                </div>
+                <div class="doc-list">
+                  <div class="mini-profile">1</div>
+                  <div class="docs-name">Dr. Nyawira M. Mumba</div>
+                </div>
+                <div class="doc-list">
+                  <div class="mini-profile">1</div>
+                  <div class="docs-name">Dr. Alice N. M</div>
+                </div>
+                <div class="doc-list">
+                  <div class="mini-profile">1</div>
+                  <div class="docs-name">Dr. Janet M</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hide patients-card-rec" id="cardRecord">
+            <div class="left">
+              <div class="top">
+                <div class="pic"></div>
+                <div class="pic-name">Shyan Rogers</div>
+                <div class="pic-id">Patients Id: <span>sb27xb8e</span></div>
+              </div>
+              <div class="mid">
+                <p>Status</p>
+                <h4>ICU Post-Op</h4>
+              </div>
+              <div class="bottom">
+                <h3>Information</h3>
+                <p>Gender: <span>Female</span></p>
+                <p>Blood Type: <span>O rh+</span></p>
+                <p>Allergies: <span>Penicilin, Lactose</span></p>
+                <p>Disease: <span>Anaemia, Malaria</span></p>
+                <p>Weight: <span>84 Kgs</span></p>
+                <p>Last Visit: <span>12/10/2023</span></p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="eins">
+                <button class="print">Print Report</button>
+                <button class="send-report">Send Report</button>
+                <button class="Doctors-reort">Post ICU Report</button>
+                <button class="cloze" id="exit">X</button>
+              </div>
+              <div class="twei">
+                <div class="vital-signs">
+                  <h4>Vital Signs</h4>
+                </div>
+                <div class="mother">
+                  <div class="son">
+                    <div class="tiny">
+                      <img src="./Pics/health.png" alt="" srcset="" />
+                    </div>
+                    <h3>Heart Rate</h3>
+                    <p>84 <small>btm</small></p>
+                  </div>
+                  <div class="dota">
+                    <div class="tiny">
+                      <img src="./Pics/lungs.png" alt="" srcset="" />
+                    </div>
+                    <h3>Oxygen Saturation</h3>
+                    <p>99%</p>
+                  </div>
+                  <div class="bro">
+                    <div class="tiny">
+                      <img src="./Pics/therm.png" alt="" srcset="" />
+                    </div>
+                    <h3>Body Temp</h3>
+                    <p>96.5 <small>C</small></p>
+                  </div>
+                  <div class="siz">
+                    <div class="tiny">
+                      <img src="./Pics/test-tube.png" alt="" srcset="" />
+                    </div>
+                    <h3>Glucose Level</h3>
+                    <p>100 <small>mg/dl</small></p>
+                  </div>
+                </div>
+              </div>
+              <div class="drei">
+                <div class="lab-report-title">
+                  <h3>Test Reports</h3>
+                </div>
+                <div class="lab-report">
+                  <div class="scans">
+                    <div class="img">
+                      <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <div class="details">
+                      <h5>CT Scan - Abdomen</h5>
+                      <p><small>21st Dec 2020</small></p>
+                    </div>
+                  </div>
+                  <div class="blood-test">
+                    <div class="img">
+                      <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <div class="details">
+                      <h5>Blood Test</h5>
+                      <p><small>25th June 2021</small></p>
+                    </div>
+                  </div>
+                  <div class="pathology-test">
+                    <div class="img">
+                      <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <div class="details">
+                      <h5>Pathology - Test</h5>
+                      <p><small>2nd Feb 2023</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="veir">
+                <h4>Prescription</h4>
+                <div class="purple">
+                  <div class="uno">121212</div>
+                  <div class="dos">234567</div>
+                  <div class="tres">f4g5546h</div>
+                </div>
+                <button class="prescription">Add a prescription</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+  <script src="/java script/config.js"></script>
+  <script src="./Dashboard.js"></script>
+  <script src="/js/doctors.js"></script>
+</html>
